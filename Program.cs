@@ -38,6 +38,7 @@ namespace King_CashFlowManager
             
 
             // rando console writeline System.Console.WriteLine(random.Next(10,50));
+            //next is user initiated data to be introduced into the array and printed.
 
             Console.WriteLine("Weekly Cash Flow Analysis is as follows: ");
         }
