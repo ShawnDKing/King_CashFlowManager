@@ -8,5 +8,12 @@ namespace King_CashFlowManager
 {
     public class Ledger
     {
+
+        public enum LedgerType
+        {
+            Salaried,
+            Hourly,
+            Invoice
+        }
     }
 }

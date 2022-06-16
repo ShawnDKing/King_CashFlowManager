@@ -14,12 +14,6 @@ namespace King_CashFlowManager
         private string _ssn;
         private decimal _weeklySalary;
 
-        public enum LedgerType
-        {
-            Salaried,
-            Hourly,
-            Invoice
-        }
         
         public SalariedEmployee( string FirstName, string LastName, string SSN, LedgerType Type, decimal WeeklySalary) : base (FirstName, LastName, SSN)
         {
@@ -27,6 +21,15 @@ namespace King_CashFlowManager
             _lastname = LastName;
             _ssn = SSN;
             _weeklySalary = WeeklySalary;
+            //need set up for salary/mo
+            FinalAmount(_totalAmt);
+        }
+        
+        public enum LedgerType
+        {
+            Salaried,
+            Hourly,
+            Invoice
         }
 
         public string FirstName
@@ -46,7 +49,7 @@ namespace King_CashFlowManager
 
         public override string ToString()
         {
-            return LedgerType.Salaried; 
+            return type + " employee: " + _firstName + " " + _lastName + "\n" + "SSN: " + _lastName + "\n" + "Weekly Salary: " + _weeklySalary + "\n" + "Earned: " + _totalAmt.ToString(type) + "\n";
         }
     }
 }

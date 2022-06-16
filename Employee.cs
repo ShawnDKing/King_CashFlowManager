@@ -14,12 +14,6 @@ namespace King_CashFlowManager
         private string _ssn;
     
 
-        public enum LedgerType
-        {
-            Salaried,
-            Hourly,
-            Invoice
-        }
 
         public Employee( string FirstName, string LastName, string SSN, LedgerType Type)
         {
@@ -27,6 +21,13 @@ namespace King_CashFlowManager
             _lastname = LastName;
             _ssn = SSN;
         
+        }
+
+        public enum LedgerType
+        {
+            Salaried,
+            Hourly,
+            Invoice
         }
 
         public string FirstName
@@ -61,7 +62,7 @@ namespace King_CashFlowManager
 
         public string ToString()
         {
-            return LedgerType;
+            return LedgerType(type);
         }
 
        
