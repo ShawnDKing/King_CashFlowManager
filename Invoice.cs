@@ -56,7 +56,7 @@ namespace King_CashFlowManager
         }
         public override string ToString()
         {
-            return LedgerType + + ": " + _partNum.ToString() + "\n" + "Quantity: " + _amount + "\n" +"Part Description" + "\n" + "Unit Price: " + Cost.ToString() + "\n" + "Extended Price: " + _total.ToString() + "\n";
+            return LedgerType + ": " + _partNum.ToString() + "\n" + "Quantity: " + _amount + "\n" +"Part Description" + "\n" + "Unit Price: " + Cost.ToString("C") + "\n" + "Extended Price: " + _total.ToString("C") + "\n";
         }
     }
 }

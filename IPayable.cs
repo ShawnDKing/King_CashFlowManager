@@ -12,6 +12,7 @@ namespace King_CashFlowManager
         {
             get;
         }
+        
         string LedgerType
         {
             get;

@@ -15,7 +15,7 @@ namespace King_CashFlowManager
     
 
 
-        public Employee( string FirstName, string LastName, string SSN, LedgerType Type)
+        public Employee( string FirstName, string LastName, string SSN, LedgerType type)
         {
             _firstName = FirstName;
             _lastname = LastName;

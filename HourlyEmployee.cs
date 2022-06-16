@@ -17,7 +17,7 @@ namespace King_CashFlowManager
         private int _hoursWorked;
 
 
-        public SalariedEmployee( string FirstName, string LastName, string SSN, LedgerType Type, decimal HourlyPay, int HoursWorked) : base (FirstName, LastName, SSN)
+        public SalariedEmployee( string FirstName, string LastName, string SSN, LedgerType type, decimal HourlyPay, int HoursWorked) : base (FirstName, LastName, SSN)
         {
             _firstName = FirstName;
             _lastname = LastName;
@@ -40,12 +40,12 @@ namespace King_CashFlowManager
 
         }
 
-        public enum LedgerType
-        {
-            Salaried,
-            Hourly,
-            Invoice
-        }
+        //public enum LedgerType
+        //{
+            //Salaried,
+            //Hourly,
+            //Invoice
+        //}
 
         public string FirstName
         {
@@ -64,7 +64,7 @@ namespace King_CashFlowManager
 
         public override string ToString()
         {
-            return type + " employee: " + _firstName + " " + _lastName + "\n" + "SSN: " + _lastName + "\n" + "Hourly Wage Salary: " + _hoursWorked + "\n" + "Earned: " + _totalAmt.ToString(type) + "\n";
+            return type + " employee: " + _firstName + " " + _lastName + "\n" + "SSN: " + _ssn  + "\n" + "Hourly Wage Salary: " + _hourlyPay.ToString("C") + _hoursWorked + "\n" + "Earned: " + _totalAmt.ToString("C") + "\n";
         }
 
 
