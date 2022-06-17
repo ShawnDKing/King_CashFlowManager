@@ -16,7 +16,7 @@ namespace King_CashFlowManager
         private decimal _hourlyPay;
         private int _hoursWorked;
 
-       public string FirstName
+        public string FirstName
         {
             get { return _firstName;}
         }
@@ -33,7 +33,7 @@ namespace King_CashFlowManager
 
         string LedgerType
         {
-            get { return HourlyEmployee; }
+            get { return LedgerType.Hourly; }
         }
 
         public HourlyEmployee( string FirstName, string LastName, string SSN, LedgerType Type, decimal HourlyPay, int HoursWorked) : base (FirstName, LastName, SSN)
@@ -44,19 +44,6 @@ namespace King_CashFlowManager
             _hourlyPay = HourlyPay;
             _hoursWorked = HoursWorked;
             _type = Type;
-
-            if (_hoursWorked == 40)
-            {
-                _totalAmt = _hoursWorked * _hourlyPay;
-                return _totalAmt;  
-            else if (_hoursWorked > 40)
-                {
-                    _totalAmt = _hoursWorked * (_hoursWorked * 1.5);
-                    return _totalAmt;
-                }
-            }
-            GetPayAmount(_totalAmt);
-
         }
 
         public enum LedgerType
@@ -66,6 +53,19 @@ namespace King_CashFlowManager
             Invoice
         }
 
+        decimal GetPayAmount(decimal HourlyPay, int HoursWorked)
+        {   
+             if (_hoursWorked <= 40)
+             {
+             _totalAmt += _hoursWorked * _hourlyPay;
+             return _totalAmt;
+             }
+             else (_hoursWorked > 40)
+             {
+             _totalAmt += _hoursWorked * (_hourlyPay * 1.5);
+             return _totalAmt;
+             }
+        }
      
         public override string ToString()
         {

@@ -53,11 +53,10 @@ namespace King_CashFlowManager
 
         public decimal GetPayAmount(decimal total)
         {
-            _totalAmt = total;decimal total
+            _totalAmt = total;
             return total;
             
         }
-
 
         public string ToString()
         {

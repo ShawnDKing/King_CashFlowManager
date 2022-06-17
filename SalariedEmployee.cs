@@ -22,10 +22,6 @@ namespace King_CashFlowManager
             _ssn = SSN;
             _weeklySalary = WeeklySalary;
             _type = Type;
-            _totalAmt = WeeklySalary * 4;
-            //needs computations for salary/mo
-
-            GetPayAmount(_totalAmt);
         } 
         
         public enum LedgerType
@@ -52,14 +48,15 @@ namespace King_CashFlowManager
 
         string LedgerType
         {
-            get { return SalariedEmployee; }
+            get { return LedgerType.Salaried; }
         }
-        public decimal GetPayAmount(decimal total)
+        public decimal GetPayAmount(decimal WeeklySalary)
         {
-            _totalAmt = total;decimal total
-            return total;
-            
+            _totalAmt = Salary * 4;
+            return _totalAmt *    
         }
+
+
         public override string ToString()
         {
             return LedgerType.Salaried + " employee: " + _firstName + " " + _lastName + "\n" + "SSN: " + _lastName + "\n" + "Weekly Salary: " + "$" + _weeklySalary.ToString("C") + "\n" + "Earned: " + "$"   _totalAmt.ToString("C") + "\n";

@@ -14,13 +14,12 @@ namespace King_CashFlowManager
         private int _amount;
         private decimal _cost;
 
-        public Invoice(string PartNum, string PartType, int Amount, decimal Cost, Ledger.LedgerType type)
+        public Invoice(string PartNum, string PartType, int Amount, decimal Cost, LedgerType type)
         {
             _partNum = PartNum;
             _partType = PartType;
             _amount = Amount;
             _cost = Cost;
-            _total = _cost * _amount;
         }
 
         public enum LedgerType
@@ -30,29 +29,25 @@ namespace King_CashFlowManager
             Invoice
         }
 
-        public decimal GetPayableAmount()
+        public decimal GetPayableAmount(decimal Cost)
         {
+            _total = _cost + _cost;
             return _total;
         }
 
         public string PartNum
         {
-            get;
+            get {return _partNum;}
         }
 
         public string PartType
         {
-            get;
-        }
-
-        public int PartType
-        {
-            get;
+            get  {return _partType;}
         }
 
         public decimal Cost
         {
-            get;
+            get { return _cost;}
         }
         public override string ToString()
         {
