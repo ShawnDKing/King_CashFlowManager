@@ -16,55 +16,60 @@ namespace King_CashFlowManager
         private decimal _hourlyPay;
         private int _hoursWorked;
 
+       public string FirstName
+        {
+            get { return _firstName;}
+        }
 
-        public SalariedEmployee( string FirstName, string LastName, string SSN, LedgerType type, decimal HourlyPay, int HoursWorked) : base (FirstName, LastName, SSN)
+        public string LastName
+        { 
+            get { return _lastName;};
+        }
+
+        public string SSN
+        {
+            get { return _ssn;}
+        }
+
+        string LedgerType
+        {
+            get { return HourlyEmployee; }
+        }
+
+        public HourlyEmployee( string FirstName, string LastName, string SSN, LedgerType Type, decimal HourlyPay, int HoursWorked) : base (FirstName, LastName, SSN)
         {
             _firstName = FirstName;
             _lastname = LastName;
             _ssn = SSN;
             _hourlyPay = HourlyPay;
             _hoursWorked = HoursWorked;
+            _type = Type;
 
-            switch(_hoursWorked)
+            if (_hoursWorked == 40)
             {
-                case <=40:
-                    _totalAmt = _hourlyPay * _hoursWorked;
-                    break;
-                case > 40:
-                    int _overTime = _hoursWorked - 40;
-                    _totalAmt = _hourlyPay * 40;
-                    _totalAmt += _overTime *(_hourlyPay * 1.5m);
-                    break;
+                _totalAmt = _hoursWorked * _hourlyPay;
+                return _totalAmt;  
+            else if (_hoursWorked > 40)
+                {
+                    _totalAmt = _hoursWorked * (_hoursWorked * 1.5);
+                    return _totalAmt;
+                }
             }
-            FinalAmount(_totalAmt);
+            GetPayAmount(_totalAmt);
 
         }
 
-        //public enum LedgerType
-        //{
-            //Salaried,
-            //Hourly,
-            //Invoice
-        //}
-
-        public string FirstName
+        public enum LedgerType
         {
-            get;
+            Salaried,
+            Hourly,
+            Invoice
         }
 
-        public string LastName
-        { 
-            get;
-        }
-
-        public string SSN
-        {
-            get;
-        }
-
+     
         public override string ToString()
         {
-            return type + " employee: " + _firstName + " " + _lastName + "\n" + "SSN: " + _ssn  + "\n" + "Hourly Wage Salary: " + _hourlyPay.ToString("C") + _hoursWorked + "\n" + "Earned: " + _totalAmt.ToString("C") + "\n";
+            return _type + " employee: " + _firstName + " " + _lastName + "\n" + "SSN: " + _ssn  + "\n" + "Hourly Wage Salary: " + "$" + _hourlyPay.ToString("C") + _hoursWorked + "\n" + "Earned: " + "$" + _totalAmt.ToString("C") + "\n";
         }
 
 

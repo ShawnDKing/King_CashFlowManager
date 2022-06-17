@@ -15,5 +15,7 @@ namespace King_CashFlowManager
             Hourly,
             Invoice
         }
+
+
     }
 }

@@ -15,11 +15,12 @@ namespace King_CashFlowManager
     
 
 
-        public Employee( string FirstName, string LastName, string SSN, LedgerType type)
+        public Employee( string FirstName, string LastName, string SSN, LedgerType Type)
         {
             _firstName = FirstName;
             _lastname = LastName;
             _ssn = SSN;
+            _type = Type;
         
         }
 
@@ -30,39 +31,37 @@ namespace King_CashFlowManager
             Invoice
         }
 
-        public string FirstName
+       public string FirstName
         {
-            get;
+            get { return _firstName;}
         }
 
         public string LastName
         { 
-            get;
+            get { return _lastName;};
         }
 
         public string SSN
         {
-            get;
+            get { return _ssn;}
         }
 
-        public LedgerType type 
+        string LedgerType
         {
             get;
         }
 
-        public decimal GetPayAmount()
+        public decimal GetPayAmount(decimal total)
         {
-            return _totalAmt;
+            _totalAmt = total;decimal total
+            return total;
+            
         }
 
-        protected void FinalAmount (decimal total)
-        {
-             _totalAmt = total;
-        }
 
         public string ToString()
         {
-            return LedgerType(type);
+            
         }
 
        

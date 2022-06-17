@@ -14,7 +14,7 @@ namespace King_CashFlowManager
         private int _amount;
         private decimal _cost;
 
-        public Invoice(string PartNum, string PartType, int Amount, decimal Cost, Ledgertype type)
+        public Invoice(string PartNum, string PartType, int Amount, decimal Cost, Ledger.LedgerType type)
         {
             _partNum = PartNum;
             _partType = PartType;
@@ -56,7 +56,7 @@ namespace King_CashFlowManager
         }
         public override string ToString()
         {
-            return LedgerType + ": " + _partNum.ToString() + "\n" + "Quantity: " + _amount + "\n" +"Part Description" + "\n" + "Unit Price: " + Cost.ToString("C") + "\n" + "Extended Price: " + _total.ToString("C") + "\n";
+            return LedgerType + ": " + _partNum.ToString() + "\n" + "Quantity: " + _amount + "\n" +"Part Description" + "\n" + "Unit Price: " + "$" + _cost.ToString("C") + "\n" + "Extended Price: " + "$" +_total.ToString("C") + "\n";
         }
     }
 }

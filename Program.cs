@@ -18,29 +18,99 @@ namespace King_CashFlowManager
         static void Main(string[] args)
         {
             //initialize 
-            private string _firstName;
-            private string _lastName;
-            private string _ssn;
-            private string _salary;
-            private bool _continue = true;
-            private bool _toTryParse;
-            private string _choice;
+            string _firstName;
+            string _lastName;
+            string _ssn;
+            decimal _salary;
+            decimal _hourlyPay;
+            string _partType;
+            string _amount;
+            int choice;
+            decimal _price;
+            decimal _totalAMount;
 
 
-            System.Random random = new System.Random();      
-            IPayable[] payables = new IPayable[10];
-            payables[0] = new SalariedEmployee("John", "Smith", "111-11-1111", Ledger.LedgerType, 800.50m); 
-            payables[1] = new SalariedEmployee("Susan", "Matthews", "222-22-2222", Ledger.LedgerType, 1100m);
-            payables[2] = new HourlyEmployee("Karen", "Williams", "444-44-4444", Ledger.LedgerType, 16.75m, 40);
-            payables[3] = new HourlyEmployee("Carol", "Walsh", "333-33-3333", Ledger.LedgerType, 19.50m, 42
-            payables[4] = new Invoice.LedgerType(Console.WriteLine Random.Next(6) + "_" + Random.Next(4));
-            payables[5] = new Invoice.(Console.WriteLine( Random.Next(0,10) + "_" + Random.Next(0,10));
+            Random r = new Random(DateTime).Next;
+           
+        
+            IPayable[] payables = new IPayable[20];
+            payables[0] = new SalariedEmployee("John", "Smith", "111-11-1111", SalariedEmployee, 800.50m); 
+            payables[1] = new SalariedEmployee("Susan", "Matthews", "222-22-2222", SalariedEmployee, 1100m);
+            payables[2] = new HourlyEmployee("Karen", "Williams", "444-44-4444", HourlyEmployee, 16.75m, 40);
+            payables[3] = new HourlyEmployee("Carol", "Walsh", "333-33-3333", HourlyEmployee, 19.50m, 42);
+            payables[4] = new Invoice(r.Next(000000)"_"r.Next(0000), "Flux Capacitor", "2", 3655.66m, 7311.32m, Invoice);
+            payables[5] = new Invoice(r.Next(000000)"_"r.Next(0000), "Flux Capacitor", "3", 14.50m, 43.50m, Invoice);
+
+
+            Console.WriteLine("Welcome to CashFlow Manager")Console.WriteLine("Welcome to CashFlow Manager");
+            Console.WriteLine("Press 1 to add a Salaried Employee");
+            Console.WriteLine("Press 2 to add an Hourly Employee");
+            Console.WriteLine("Press 3 to Add an invoice");
+            Console.WriteLine("Press 4 to end the program and get totals");
+            Console.WriteLine("press 5 to continue");
+            choice = Console.ReadLine();
             
+           while (choice == 5)
+           {
+                if (choice == 1)
+                {
+                    for (int i=0; i < payables.Length;i++)
+                    {
+                    Console.WriteLine("Please enter the first name:");
+                    _firstName = Console.ReadLine();
+                    Console.WriteLine("Please enter the last name: ");
+                    _lastName = Console.ReadLine();
+                    Console.WriteLine("Please enter the Social Security Number: ");
+                    _ssn.ToString() = Console.ReadLine();
+                    Console.WriteLine("Please enter the weekly salary: );
+                    _salary.ToString() = Console.ReadLine();
+                    return payables[i]Ledger.LedgerType.Salaried;
+                    }
+                }
 
-            // rando console writeline System.Console.WriteLine(random.Next(10,50));
-            //next is user initiated data to be introduced into the array and printed.
+                if (choice == 2)
+                { 
+                    for (int i=0; i < payables.Length;i++)
+                    {
+                    Console.WriteLine("Please enter the first name:");
+                    _firstName = Console.ReadLine();
+                    Console.WriteLine("Please enter the last name: ");
+                    _lastName = Console.ReadLine();
+                    Console.WriteLine("Please enter the Social Security Number: ");
+                    _ssn.ToString() = Console.ReadLine();
+                    Console.WriteLine("Please enter the hourly pay: );
+                    _hourlyPay.ToString() = Console.ReadLine();
+                    return payables[i]Ledger.LedgerType.Hourly;
+                    }
+                }
 
-            Console.WriteLine("Weekly Cash Flow Analysis is as follows: ");
+                if (choice == 3)
+                {
+                    for (int i=0; i < payables.Length;i++)
+                    {
+                    Console.WriteLine("Please enter the part type:");
+                    _partType = Console.ReadLine();
+                    Console.WriteLine("Please enter the quantity(example: 3): ");
+                    _amount = Console.ReadLine();
+                    Console.WriteLine("Please enter the price(example: 9.99): ");
+                    _price.ToString() = Console.ReadLine();
+                    Console.WriteLine("Please enter the hourly pay: );
+                    _hourlyPay.ToString() = Console.ReadLine();
+                    return payables[i]Ledger.LedgerType.Invoice;
+                    }
+
+                    if (choice == 4)
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Total Weekly Payout: " );
+                        Console.WriteLine("\n");
+                        Console.WriteLine("Category Breakdown: ");
+                        Console.WriteLine("\tInvoices: ");
+                        Console.WriteLine("\tSalaried Payroll: ");
+                        Console.WriteLine("\tHourly Payroll: ");  
+                    }
+                }
+           }      
         }
     }
 }
